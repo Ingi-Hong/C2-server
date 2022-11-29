@@ -50,7 +50,8 @@ def handle_whoami():
 
 @app.route("/test", methods=["GET"])
 def handle_test():
-    stuff = executeQuery("SELECT * from test")
+    cursor = load()
+    stuff = cursor.executeQuery("SELECT * from test")
     return ("<p>%s</p>" % stuff)
 
 @app.route("/")
