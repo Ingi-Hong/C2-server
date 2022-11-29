@@ -51,5 +51,4 @@ def handle_test():
 
 @app.route("/")
 def hello():
-    load()
     return "<p>Hello, World!</p>"
