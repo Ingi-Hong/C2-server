@@ -23,6 +23,7 @@ def load():
     except:
         print("failed to connect")
 
+    print(f"Connection closed? {conn.closed}")
     return cursor
 
 # For when you want to any query, used to avoid connections timing out 
@@ -36,7 +37,7 @@ def executeQuery(query):
 @app.route("/hello", methods=["GET"])
 def sure():
     try:
-        load()
+        cursor = load()
     except:
         print("failure")
     print(host, password, username, port, database)
