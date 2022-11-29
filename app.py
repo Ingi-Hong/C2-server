@@ -23,7 +23,7 @@ def load():
     # Connect to C2
     try:
         print("Connecting")
-        conn = psycopg2.connect(f"dbname={database} user={username} password={password} host={host} port={port}")
+        conn = psycopg2.connect(dbname=database, user=username, password=password, host=host, port=port, connect_timeout=10)
         print("Success? Should be 0: ", conn.closed)
         cursor = conn.cursor()
     except:
