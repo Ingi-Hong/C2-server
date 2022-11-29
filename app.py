@@ -9,11 +9,11 @@ app = Flask(__name__)
 
 # Load in .env variables to connect to PostgreSQL server 
 try:
-    host = os.environ.get('host')
-    password = os.environ.get('password')
-    username = os.environ.get('username')
-    port = os.environ.get('port')
-    database = os.environ.get('database')
+    host = os.environ['host']
+    password = os.environ['password']
+    username = os.environ['username']
+    port = os.environ['port']
+    database = os.environ['database']
 except: 
     print("failure getting keys")
 
