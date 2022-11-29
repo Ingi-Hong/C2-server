@@ -47,6 +47,7 @@ def sure():
         username = os.environ['username']
         port = os.environ['thePort']
         database = os.environ['database']
+        conn = psycopg2.connect(f"dbname={database} user={username} password={password} host={host} port={port}")
     except:
         print("failure")
     print(host, password, username, port, database)
