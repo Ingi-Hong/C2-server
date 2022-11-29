@@ -15,7 +15,7 @@ def load():
         host = os.environ['host']
         password = os.environ['password']
         username = os.environ['username']
-        port = os.environ['port']
+        port = os.environ['thePort']
         database = os.environ['database']
     except: 
         print("failure getting keys")
