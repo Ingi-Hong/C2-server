@@ -7,19 +7,19 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# # Load in .env variables to connect to PostgreSQL server 
-# host = os.environ['host']
-# password = os.environ['password']
-# username = os.environ['username']
-# port = os.environ['port']
-# database = os.environ['database']
-# sslmode = os.environ['sslmode']
+# Load in .env variables to connect to PostgreSQL server 
+host = os.environ.get('host')
+password = os.environ.get('password')
+username = os.environ.get('username')
+port = os.environ.get('port')
+database = os.environ.get('database')
+sslmode = os.environ.get('sslmode')
 
-# #Connect to C2
-# print("Connecting")
-# conn = psycopg2.connect(f"dbname={database} user={username} password={password} host={host} port={port}")
-# print("Success? Should be 0: ", conn.closed)
-# cursor = conn.cursor()
+#Connect to C2
+print("Connecting")
+conn = psycopg2.connect(f"dbname={database} user={username} password={password} host={host} port={port}")
+print("Success? Should be 0: ", conn.closed)
+cursor = conn.cursor()
 
 # For when you want to any query, used to avoid connections timing out 
 def executeQuery(query):
