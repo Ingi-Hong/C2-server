@@ -8,18 +8,12 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 print(os.environ)
-
+host = os.environ['host']
+password = os.environ['password']
+username = os.environ['username']
+port = os.environ['thePort']
+database = os.environ['database']
 def load():
-    # Load in .env variables to connect to PostgreSQL server 
-    try:
-        host = os.environ['host']
-        password = os.environ['password']
-        username = os.environ['username']
-        port = os.environ['thePort']
-        database = os.environ['database']
-    except: 
-        print("failure getting keys")
-
     # Connect to C2
     try:
         print("Connecting")
@@ -42,12 +36,7 @@ def executeQuery(query):
 @app.route("/hello", methods=["GET"])
 def sure():
     try:
-        host = os.environ['host']
-        password = os.environ['password']
-        username = os.environ['username']
-        port = os.environ['thePort']
-        database = os.environ['database']
-        conn = psycopg2.connect(f"dbname={database} user={username} password={password} host={host} port={port}")
+        load()
     except:
         print("failure")
     print(host, password, username, port, database)
