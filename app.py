@@ -41,6 +41,11 @@ def executeQuery(query):
 
 @app.route("/hello", methods=["GET"])
 def sure():
+    try:
+        host = os.environ['host']
+    except:
+        print("failure")
+    print(host)
     return "<p>hey!!</p>"
 
 @app.route("/whoami", methods=["GET"])
