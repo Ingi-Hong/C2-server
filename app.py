@@ -7,15 +7,16 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
+print(os.environ)
 # Load in .env variables to connect to PostgreSQL server 
-try:
-    host = os.environ['host']
-    password = os.environ['password']
-    username = os.environ['username']
-    port = os.environ['port']
-    database = os.environ['database']
-except: 
-    print("failure getting keys")
+# try:
+#     host = os.environ['host']
+#     password = os.environ['password']
+#     username = os.environ['username']
+#     port = os.environ['port']
+#     database = os.environ['database']
+# except: 
+#     print("failure getting keys")
 
 #Connect to C2
 # try:
