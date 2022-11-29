@@ -18,13 +18,13 @@ except:
     print("failure getting keys")
 
 #Connect to C2
-try:
-    print("Connecting")
-    conn = psycopg2.connect(f"dbname={database} user={username} password={password} host={host} port={port}")
-    print("Success? Should be 0: ", conn.closed)
-    cursor = conn.cursor()
-except:
-    print("failed to connect")
+# try:
+#     print("Connecting")
+#     conn = psycopg2.connect(f"dbname={database} user={username} password={password} host={host} port={port}")
+#     print("Success? Should be 0: ", conn.closed)
+#     cursor = conn.cursor()
+# except:
+#     print("failed to connect")
 
 # For when you want to any query, used to avoid connections timing out 
 def executeQuery(query):
