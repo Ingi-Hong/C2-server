@@ -39,6 +39,10 @@ def executeQuery(query):
 
     return returnThis 
 
+@app.route("/hello", methods=["GET"])
+def sure():
+    return "<p>hey!!</p>"
+
 @app.route("/whoami", methods=["GET"])
 def handle_whoami():
     #TO IMPLEMENT 
