@@ -43,9 +43,13 @@ def executeQuery(query):
 def sure():
     try:
         host = os.environ['host']
+        password = os.environ['password']
+        username = os.environ['username']
+        port = os.environ['thePort']
+        database = os.environ['database']
     except:
         print("failure")
-    print(host)
+    print(host, password, username, port, database)
     return "<p>hey!!</p>"
 
 @app.route("/whoami", methods=["GET"])
