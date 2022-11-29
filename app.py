@@ -29,8 +29,11 @@ def load():
     except:
         print("failed to connect")
 
+    return cursor
+
 # For when you want to any query, used to avoid connections timing out 
 def executeQuery(query):
+    cursor = load()
     cursor.execute(query)
     returnThis = cursor.fetchall()
 
